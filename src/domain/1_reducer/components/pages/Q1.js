@@ -1,5 +1,6 @@
 import React, { useState, useReducer } from "react";
 import NavigateButton from "../../../../components/NavigateButton";
+import reducer from "../../../../store/1_reducer";
 import Q1Form from "../atom/Form";
 import ReducerQ1List from "../atom/List";
 
@@ -7,6 +8,7 @@ import ReducerQ1List from "../atom/List";
 // function reducer(state= 초기값, action)
 // switch말고 if문으로도 가능
 
+/*
 function reducer(state, action) {
   switch (action.type) {
     case "ADD": {
@@ -19,6 +21,7 @@ function reducer(state, action) {
       return state;
   }
 }
+*/
 
 const ReducerQ1Page = () => {
   /* 
