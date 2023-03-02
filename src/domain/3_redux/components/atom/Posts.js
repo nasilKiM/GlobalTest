@@ -1,10 +1,15 @@
 import Post from "./Post/Post";
 
-const AllPosts = ({ posts }) => {
+const AllPosts = ({ posts, handleDeletePost, handleAddCom }) => {
   return (
     <div>
       {posts.map((post) => (
-        <Post key={post.id} post={post} />
+        <Post
+          key={post.id}
+          post={post}
+          handleDeletePost={handleDeletePost}
+          handleAddCom={handleAddCom}
+        />
       ))}
     </div>
   );

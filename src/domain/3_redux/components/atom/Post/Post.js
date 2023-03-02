@@ -1,8 +1,11 @@
 import Comment from "../Comment/Comment";
 import CommentForm from "../Comment/Form";
 import UserCard from "../UserCard/Card";
+import { useDispatch } from "react-redux";
 
-const Post = ({ post }) => {
+const Post = ({ post, handleDeletePost, handleAddCom }) => {
+  const dispatch = useDispatch();
+
   return (
     <div
       style={{
@@ -14,7 +17,7 @@ const Post = ({ post }) => {
       <UserCard user={post.User} />
       <h2>--PostContent--</h2>
       <p>{post.content}</p>
-      <CommentForm />
+      <CommentForm post={post} handleAddCom={handleAddCom} />
       <div
         style={{
           display: "table",
@@ -23,11 +26,18 @@ const Post = ({ post }) => {
         }}
       >
         {post.Comments &&
-          post.Comments.map((comment) => (
-            <Comment key={comment.id} comment={comment} />
-          ))}
+          post.Comments.map((comment) => <Comment key={comment.id} comment={comment} />)}
       </div>
-      {post.myPost && <button type="button">삭제</button>}
+      {post.myPost && (
+        <button
+          onClick={() => {
+            handleDeletePost(post.id);
+          }}
+          type="button"
+        >
+          삭제
+        </button>
+      )}
     </div>
   );
 };
