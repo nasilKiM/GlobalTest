@@ -65,6 +65,8 @@ export const postsReducer = (state = initialState, action) => {
         },
       ];
       return addComments;
+    case "EDIT_COM":
+    case "DELETE_COM":
     default:
       return state;
   }
