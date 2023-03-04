@@ -3,7 +3,7 @@ import CommentForm from "../Comment/Form";
 import UserCard from "../UserCard/Card";
 import { useDispatch } from "react-redux";
 
-const Post = ({ post, handleDeletePost, handleAddCom }) => {
+const Post = ({ post, handleDeletePost, handleAddCom, handleDeleteCom }) => {
   const dispatch = useDispatch();
 
   return (
@@ -26,7 +26,14 @@ const Post = ({ post, handleDeletePost, handleAddCom }) => {
         }}
       >
         {post.Comments &&
-          post.Comments.map((comment) => <Comment key={comment.id} comment={comment} />)}
+          post.Comments.map((comment) => (
+            <Comment
+              key={comment.id}
+              comment={comment}
+              postId={post.id}
+              handleDeleteCom={handleDeleteCom}
+            />
+          ))}
       </div>
       {post.myPost && (
         <button

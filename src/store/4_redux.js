@@ -65,8 +65,14 @@ export const postsReducer = (state = initialState, action) => {
         },
       ];
       return addComments;
-    case "EDIT_COM":
     case "DELETE_COM":
+      const DeleteComments = [...state];
+      const whichPost = DeleteComments.find((post) => post.id === action.payload.postId);
+      whichPost.Comments = whichPost.Comments.filter(
+        (comment) => comment.id !== action.payload.commentId
+      );
+      return DeleteComments;
+    case "EDIT_COM":
     default:
       return state;
   }

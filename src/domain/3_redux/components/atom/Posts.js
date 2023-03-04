@@ -1,6 +1,6 @@
 import Post from "./Post/Post";
 
-const AllPosts = ({ posts, handleDeletePost, handleAddCom }) => {
+const AllPosts = ({ posts, handleDeletePost, handleAddCom, handleDeleteCom }) => {
   return (
     <div>
       {posts.map((post) => (
@@ -9,6 +9,7 @@ const AllPosts = ({ posts, handleDeletePost, handleAddCom }) => {
           post={post}
           handleDeletePost={handleDeletePost}
           handleAddCom={handleAddCom}
+          handleDeleteCom={handleDeleteCom}
         />
       ))}
     </div>

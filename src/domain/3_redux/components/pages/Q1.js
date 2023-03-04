@@ -55,10 +55,20 @@ const ReduxQ1Page = () => {
     dispatch(ADD_COM({ id, nickName, content }));
   };
 
+  // comment 삭제
+  const handleDeleteCom = (postId, commentId) => {
+    dispatch(ADD_COM({ postId, commentId }));
+  };
+
   return (
     <div>
       <PostForm onSubmit={onSubmit} />
-      <AllPosts posts={Posts} handleDeletePost={handleDeletePost} handleAddCom={handleAddCom} />
+      <AllPosts
+        posts={Posts}
+        handleDeletePost={handleDeletePost}
+        handleAddCom={handleAddCom}
+        handleDeleteCom={handleDeleteCom}
+      />
       <NavigateButton isLastPage />
     </div>
   );
