@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { ModalContext } from "../../../../../store/2_context";
+
 const ContextQ1Detail2 = () => {
   const { setIsModalOpen, isModalOpen } = useContext(ModalContext);
 

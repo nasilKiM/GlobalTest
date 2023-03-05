@@ -1,7 +1,7 @@
 import { useState } from "react";
 import NavigateButton from "../../../../components/NavigateButton";
 import { ModalContext } from "../../../../store/2_context";
-import ContextQ1Detail from "../atom/Q1/Detail";
+import ContextQ1Detail from "../atom/Q1/Detail0";
 import ContextQ1Modal from "../atom/Q1/Modal";
 
 const ContextQ1Page = () => {
